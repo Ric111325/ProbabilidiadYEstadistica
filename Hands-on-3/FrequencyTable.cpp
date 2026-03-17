@@ -37,7 +37,7 @@ void FrequencyTable::imprimir() {
     }
 
     cout << "\nTabla de Frecuencias\n";
-    cout << "Dato\tf\tfr\t\t%\n";
+    cout << "Dato\tf\tfr\t%\n";
 
     for(int i = 0; i < m; i++) {
         double fr = (double)frecuencia[i] / total;
