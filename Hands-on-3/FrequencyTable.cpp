@@ -1,5 +1,7 @@
 #include "FrequencyTable.hpp"
 #include <iostream>
+#include <iomanip>
+
 using namespace std;
 
 void FrequencyTable::calcular(DataSet ds) {
@@ -41,6 +43,8 @@ void FrequencyTable::imprimir() {
         double fr = (double)frecuencia[i] / total;
         double porcentaje = fr * 100;
 
+        cout<< fixed << setprecision(2);
+        
         cout << valores[i] << "\t"
              << frecuencia[i] << "\t"
              << fr << "\t"

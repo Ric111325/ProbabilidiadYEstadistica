@@ -7,12 +7,12 @@ using namespace std;
 
 DataSet::DataSet() {
     
-    n = 15;
+    n = 30;
 
     srand(time(0));
 
     for(int i = 0; i < n; i++) {
-        data[i] = rand() % 10 +1 ;
+        data[i] = rand() % 30 + 1 ;
     }
 }
 
