@@ -11,6 +11,6 @@ int main() {
     FrequencyTable ft;
     ft.calcular(ds);
     ft.imprimir();
-
+    
     return 0;
 }
