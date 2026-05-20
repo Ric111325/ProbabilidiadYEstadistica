@@ -5,12 +5,12 @@
 int main() {
 
     srand(time(0));
-
+    
     DataSet a;
-    Calcular b(a);
+    Calcular b;
 
     a.printDataset();
-    b.printResults();
+    b.printResults(a);
 
     return 0;
 }

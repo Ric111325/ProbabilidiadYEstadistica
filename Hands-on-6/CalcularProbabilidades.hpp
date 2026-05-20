@@ -5,21 +5,16 @@
 
 class Calcular {
 
-private:
-    DataSet dataset;
-
 public:
-    Calcular(DataSet a);
+    
+    float marginalFila(DataSet& data, int fila);
+    float marginalColumna(DataSet& data, int columna);
 
-    float marginalA();
+    float conjunta(DataSet& data, int fila, int columna);
 
-    float marginalB();
+    float condicional(DataSet& data, int fila, int columna);
 
-    float conjuntaAB();
-
-    float condicionalBA();
-
-    void printResults();
+    void printResults(DataSet& data);
 };
 
 #endif

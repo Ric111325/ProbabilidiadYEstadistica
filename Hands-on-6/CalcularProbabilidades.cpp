@@ -3,37 +3,31 @@
 
 using namespace std;
 
-Calcular::Calcular(DataSet a) {
-    dataset = a;
+float Calcular::marginalFila(DataSet& data, int fila) {
+    return (float)data.sumaFila(fila) / data.Total();
 }
 
-float Calcular::marginalA() {
-
-    return dataset.totalColumna(0) / dataset.total();
+float Calcular::marginalColumna(DataSet& data, int columna) {
+    return (float)data.sumaColumna(columna) / data.Total();
 }
 
-float Calcular::marginalB() {
-
-    return dataset.totalFila(0) / dataset.total();
+float Calcular::conjunta(DataSet& data, int fila, int columna) {
+    return (float)data.celda(fila, columna) / data.Total();
 }
 
-float Calcular::conjuntaAB() {
-
-    return dataset.cell(0,0) / dataset.total();
+float Calcular::condicional(DataSet& data, int fila, int columna) {
+    float denom = data.sumaColumna(columna);
+    if (denom == 0) return 0;
+    return (float)data.celda(fila, columna) / denom;
 }
 
-float Calcular::condicionalBA() {
-
-    return dataset.cell(0,0) / dataset.totalColumna(0);
-}
-
-void Calcular::printResults() {
-
+void Calcular::printResults(DataSet& data) {
     cout << "\n--------------";
     cout << "\nProbabilidades\n";
-    cout << "\nP(A): " << marginalA();
-    cout << "\nP(B): " << marginalB();
-    cout << "\nP(A n B): " << conjuntaAB();
-    cout << "\nP(B|A): " << condicionalBA();
+
+    cout << "\nMarginal Columna: " << marginalColumna(data, 0);
+    cout << "\nMarginal Fila: " << marginalFila(data, 0);
+    cout << "\nConjunta: " << conjunta(data, 0, 0);
+    cout << "\nCondicional: " << condicional(data, 0, 0);
     cout << endl;
 }

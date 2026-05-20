@@ -3,20 +3,22 @@
 
 class DataSet {
 private:
+   
+    int filas, columnas, total;
     int tabla[2][2];
-
+    
 public:
     DataSet();
 
-    float cell(int fila, int columna);
+    int celda(int fila, int columna);
+    int Filas();
+    int Columna();
+    int Total();
 
-    float total();
-
-    float totalFila(int fila);
-
-    float totalColumna(int columna);
+    int sumaFila(int fila);
+    int sumaColumna(int columna);
 
     void printDataset();
 };
 
-#endif
+#endif //DATASET_HPP

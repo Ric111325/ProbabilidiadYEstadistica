@@ -8,7 +8,7 @@ using namespace std;
 DataSet::DataSet() {
     
     // Datos randoms
-    
+   
     tabla[0][0] = rand() % 10 + 1;
     tabla[0][1] = rand() % 10 + 1;
     tabla[1][0] = rand() % 10 + 1;
@@ -23,34 +23,79 @@ DataSet::DataSet() {
     tabla[1][0] = 2;
     tabla[1][1] = 6;
     */
+
+    filas = 2;
+    columnas = 2;
+
+    total = 0;
+
+    for (int i = 0; i < filas; i++){
+        for (int j = 0; j < columnas; j++){
+        total += tabla [i][j];
+        }   
+    }
+     
 }
 
-float DataSet::cell(int fila, int columna) {
+int DataSet::celda(int fila, int columna) {
     return tabla[fila][columna];
 }
 
-float DataSet::total() {
-    return tabla[0][0] + tabla[0][1] + tabla[1][0] + tabla[1][1] ;
+int DataSet::Filas() {
+    return filas;
 }
 
-float DataSet::totalColumna(int columna) {
-    return tabla[0][columna] + tabla[1][columna];
+int DataSet::Columna() {
+    return columnas;
 }
 
-float DataSet::totalFila(int fila){
-    return tabla [fila][0] + tabla[fila][1];    
+int DataSet::Total(){
+    return total;   
 }
+
+int DataSet::sumaFila(int fila) {
+    int suma = 0;
+    for (int j = 0; j < columnas; j++){
+        suma += tabla[fila][j];
+    }
+
+    return suma;
+
+}
+
+int DataSet::sumaColumna(int columna) {
+    int suma = 0;
+    
+    for (int i = 0; i < filas; i++){
+        suma += tabla[i][columna];
+    }
+
+    return suma;
+}
+
+
+
 
 void DataSet::printDataset() {
 
-   cout << "\nDataset:\n\n";
+    cout << "\nDataset:\n\n";
 
-    cout << "\tA\tA'\tSumas\n";
+    cout << "\t";
+    for (int j = 0; j < columnas; j++) {
+        if (columnas == 2) cout << (j == 0 ? "A\t" : "A'\t");
+        else cout << "C" << j << "\t";
+    }
+    cout << "Sumas\n";
 
-    cout << "B\t" << tabla[0][0] << "\t" << tabla[0][1] << "\t" << totalFila(0) << endl;
+    for (int i = 0; i < filas; i++) {
+        if (filas == 2) cout << (i == 0 ? "B\t" : "B'\t");
+        else cout << "F" << i << "\t";
 
-    cout << "B'\t" << tabla[1][0] << "\t" << tabla[1][1] << "\t" << totalFila(1) << endl;
+        for (int j = 0; j < columnas; j++) cout << tabla[i][j] << "\t";
+        cout << sumaFila(i) << "\n";
+    }
 
-    cout << "Sumas\t"
-         << totalColumna(0) << "\t" << totalColumna(1) << "\t" << total() << endl;
+    cout << "Sumas\t";
+    for (int j = 0; j < columnas; j++) cout << sumaColumna(j) << "\t";
+    cout << total << "\n";
 }
