@@ -8,22 +8,21 @@ using namespace std;
 DataSet::DataSet() {
     
     // Datos randoms
-   
+   /*
     tabla[0][0] = rand() % 10 + 1;
     tabla[0][1] = rand() % 10 + 1;
     tabla[1][0] = rand() % 10 + 1;
     tabla[1][1] = rand() % 10 + 1;
-    
+    */
 
     //Datos definidos
-    /*
+    
     tabla[0][0] = 7;
     tabla[0][1] = 3;
 
     tabla[1][0] = 2;
     tabla[1][1] = 6;
-    */
-
+    
     filas = 2;
     columnas = 2;
 
