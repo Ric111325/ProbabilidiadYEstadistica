@@ -81,20 +81,20 @@ void DataSet::printDataset() {
 
     cout << "\t";
     for (int j = 0; j < columnas; j++) {
-        if (columnas == 2) cout << (j == 0 ? "A\t" : "A'\t");
-        else cout << "C" << j << "\t";
+        if (columnas == 2) cout << (j == 0 ? "Nublado\t\t" : "No Nublado\t\t");
+        else cout << "C" << j << "\t\t";
     }
     cout << "Sumas\n";
 
     for (int i = 0; i < filas; i++) {
-        if (filas == 2) cout << (i == 0 ? "B\t" : "B'\t");
-        else cout << "F" << i << "\t";
+        if (filas == 2) cout << (i == 0 ? "Llueve\t\t" : "No llueve\t");
+        else cout << "F" << i << "\t\t";
 
-        for (int j = 0; j < columnas; j++) cout << tabla[i][j] << "\t";
+        for (int j = 0; j < columnas; j++) cout << tabla[i][j] << "\t\t";
         cout << sumaFila(i) << "\n";
     }
 
-    cout << "Sumas\t";
-    for (int j = 0; j < columnas; j++) cout << sumaColumna(j) << "\t";
+    cout << "Sumas\t\t";
+    for (int j = 0; j < columnas; j++) cout << sumaColumna(j) << "\t\t";
     cout << total << "\n";
 }
