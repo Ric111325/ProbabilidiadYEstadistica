@@ -25,9 +25,19 @@ void Calcular::printResults(DataSet& data) {
     cout << "\n--------------";
     cout << "\nProbabilidades\n";
 
-    cout << "\nMarginal Columna: " << marginalColumna(data, 0);
-    cout << "\nMarginal Fila: " << marginalFila(data, 0);
-    cout << "\nConjunta: " << conjunta(data, 0, 0);
-    cout << "\nCondicional: " << condicional(data, 0, 0);
+    cout << "\nMarginal Columna 1: " << marginalColumna(data, 0);
+    cout << "\nMarginal Columna 2: " << marginalColumna(data, 1);
+    cout << "\nMarginal Fila 1: " << marginalFila(data, 0);
+    cout << "\nMarginal Fila 2: " << marginalFila(data, 1);
+    cout << endl;
+    cout << "\nConjunta (0,0): " << conjunta(data, 0, 0);
+    cout << "\nConjunta (0,1): " << conjunta(data, 0, 1);
+    cout << "\nConjunta (1,0): " << conjunta(data, 1, 0);
+    cout << "\nConjunta (1,1): " << conjunta(data, 1, 1);
+    cout << endl;
+    cout << "\nCondicional (0,0): " << condicional(data, 0, 0);
+    cout << "\nCondicional (0,1): " << condicional(data, 0, 1);
+    cout << "\nCondicional (1,0): " << condicional(data, 1, 0);
+    cout << "\nCondicional (1,1):  " << condicional(data, 1, 1);
     cout << endl;
 }
